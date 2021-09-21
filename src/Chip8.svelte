@@ -2,6 +2,7 @@
   import store from "./store";
   import Display from "./Display.svelte";
   import Controls from "./Controls.svelte";
+  import CpuDetail from "./CpuDetail.svelte";
 
   const { cpuStore, cpuState } = store;
 
@@ -17,26 +18,37 @@
     <Display pixels={$cpuStore.io.display} />
   </div>
 
-  <Controls io={$cpuStore.io} />
-
-  <dl>
-    <dt>Program Counter</dt>
-    <dd>{$cpuStore.pc.toString(16)}</dd>
-    <dt>I</dt>
-    <dd>{$cpuStore.i.toString(16)}</dd>
-  </dl>
-
-  <div>Stack: {$cpuStore.stack}</div>
-  <div>Stack Pointer: {$cpuStore.sp.toString(16)}</div>
-  <div>delay: {$cpuStore.delayTimer}</div>
-  <div>sound: {$cpuStore.soundTimer}</div>
-
   <div>
-    Instr:
-    {ppInstruction($cpuStore.memory[$cpuStore.pc])}
-    {ppInstruction($cpuStore.memory[$cpuStore.pc + 1])}
-  </div>
-  <div>
-    Registers: {$cpuStore.registers}
+    <section id="keypad">
+      <Controls io={$cpuStore.io} />
+    </section>
+    <section id="detail">
+      <CpuDetail />
+    </section>
   </div>
 </div>
+
+<style>
+  #keypad {
+    vertical-align: top;
+    float: left;
+  }
+  #detail {
+    float: left;
+    padding-left: 2em;
+  }
+
+  section {
+    display: inline-block;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 600px) {
+    #keypad,
+    #detail {
+      float: none;
+      display: block;
+      padding: 0.1em 0;
+    }
+  }
+</style>

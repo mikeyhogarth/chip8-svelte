@@ -20,6 +20,10 @@ body {
   background-color: seashell;
 }
 
+#cpu-controls button:active {
+  background-color: sandybrown;
+}
+
 #cpu-controls button.active {
   background-color: salmon;
 }

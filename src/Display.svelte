@@ -33,11 +33,13 @@
   });
 </script>
 
-<canvas id="canvasDisplay" bind:this={canvas} width={WIDTH} height={HEIGHT} />
+<div style="text-align: center">
+  <canvas id="canvasDisplay" bind:this={canvas} width={WIDTH} height={HEIGHT} />
+</div>
 
 <style>
   #canvasDisplay {
     background-color: black;
-    width: 100%;
+    width: 90%;
   }
 </style>

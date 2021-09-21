@@ -1,7 +1,9 @@
 {
   "name": "svelte-app",
   "version": "1.0.0",
-  "private": true,
+  "author": "Mikey h",
+  "private": false,
+  "license": "GPL-3.0",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",

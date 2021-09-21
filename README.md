@@ -2,7 +2,7 @@
 
 This is a frontend for a chip8 emulator, written in svelte.  The meat of the actual emulator itself is in the [TypeScript Chip8](https://github.com/mikeyhogarth/chip8-typescript) module. More details about how this all works are available there.
 
-[DEMO](https://chip8-svelte.netlify.app/)
+Check out the [DEMO](https://chip8-svelte.netlify.app/).
 
 # Running the emulator
 This is a svelte app - install using `npm install` then;
